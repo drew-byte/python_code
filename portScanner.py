@@ -10,7 +10,7 @@ else :
 	
 print("-" * 50)
 print("Scanning target: " + target)
-print("Time: " + str(datetime.now()))
+print("Time: " + str(dt.now()))
 print("-" * 50)	
 
 try: 	
@@ -19,17 +19,19 @@ try:
 	 	socket.setdefaulttimeout(1)
 	 	result = s.connect_ex((target,port))
 	 	if result == 0:
-	 		print(f"Port {port} is open)
+	 		print(f"Port {port} is open")
 	 	s.close()
 
 except KeyboardInterrupt:
-  	print("\nExiting program.")
-  	sys.exit()
+  	    print("\nExiting program.")
+        sys.exit()
+
 except socket.gaierror:
-	print("Hostname could not be resolved")
-	sys.exit()
+	    print("Hostname could not be resolved")
+        sys.exit()
+
 except socket.error:
-	print("Could not connect to server")
-	sys.exit()
-    
+	    print("Could not connect to server")
+	    sys.exit()
+
 #Terminal input - python3 <filename> <ip>
